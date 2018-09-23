@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <div mat-icon-button>
+        <mat-icon>location_city</mat-icon>
+    </div>
+    <h1>Panel de Usuario</h1>
+</mat-toolbar>
+<mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="50">
+        <mat-nav-list>
+            <mat-list-item>
+                <mat-icon>group</mat-icon>
+                <span>Cuenta</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>widgets</mat-icon>
+                <span>Controles</span>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-card>
+            <h1>
+                Controles
+            </h1>
+        </mat-card>
+        <mat-card>
+            <ng-content></ng-content>
+        </mat-card>
+
+        <mat-card>
+            <span style="position: absolute;">Sistemas programables - 2017</span>
+        </mat-card>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,25 @@
+<mat-grid-list [cols]="cols" rowHeight="500">
+    <mat-grid-tile *ngFor="let card of cards">
+        <mat-card class="boxify">
+            <mat-card-header>
+                <div mat-card-avatar>
+                    <mat-icon>{{card.avatar}}</mat-icon>
+                </div>
+                <mat-card-title>
+                    {{card.title}}
+                </mat-card-title>
+                <mat-card-subtitle>{{card.subtitle}}</mat-card-subtitle>
+            </mat-card-header>
+            <img [src]="card.image" [alt]="card.avatar" style="width:300px; height:280px;  background-size: 100%" mat-card-image>
+            <mat-card-content>
+                <p>
+                    {{card.content}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary">ir</button>
+                <button mat-flat-button color="basic">Saber mas</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
