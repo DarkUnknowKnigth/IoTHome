@@ -63,8 +63,17 @@ def monitorWater(mode="default"):
 def ligth():
     return j.dumps({"status":3,"message":"ligth"})
 
+    
+
 @app.route('/IoT')
 def iot():
     return j.dumps({"status":4,"message":"OK"})
-    
+
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return j.dumps({'message':"no se encontro la peticion",'status':404}),404
+
+
 app.run(debug=False,port=5000)
