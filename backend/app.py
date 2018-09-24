@@ -33,7 +33,11 @@ def componenteToggle(component="default",mode=-1):
 
 @app.route('/monitor')
 def monitor():
-    return j.dumps({"status":2,"message":"monitor"})
+    return j.dumps({"status":200,"message":"monitor"})
+
+@app.route('/monitor/<string:module>')
+def monitorStatus(module="default"):
+    return j.dumps({"status":200,"message":"Arduino_response"})
 
 @app.route('/monitor/light/<string:mode>')
 def monitorLigth(mode="defaul"):
@@ -59,11 +63,24 @@ def monitorWater(mode="default"):
 
 
 
-@app.route('/ligth')
-def ligth():
+@app.route('/light')
+def light():
     return j.dumps({"status":3,"message":"ligth"})
 
-    
+@app.route('/light/<int:module>')
+def lightStatus(module=-1):
+    return j.dumps({"status":3,"message":"ligth : "+str(module)+" esta: arduino_response "})
+
+@app.route('/light/<int:module>/<int:status>')
+def lightMode(module=-1,status=-1):
+    if(status==1):
+        return j.dumps({"status":3,"message":"ligth: "+str(module)+" se ha Encendido"})
+    elif(status==0):
+        return j.dumps({"status":3,"message":"ligth: "+str(module)+" se ha Apagado"})
+    else:
+        return j.dumps({"status":3,"message":"Ha ocurrido un erro en la peticion"})
+
+
 
 @app.route('/IoT')
 def iot():

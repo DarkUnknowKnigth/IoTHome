@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule,MatListModule,MatButtonModule, MatIconModule, MatCardModule,MatGridListModule, MatToolbarModule,MatSidenavModule} from '@angular/material';
 import { CardContainerComponent } from './card-container/card-container.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MainNavComponent } from './main-nav/main-nav.component';
     MatSidenavModule,
     MatMenuModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
 
   ],
   providers: [],

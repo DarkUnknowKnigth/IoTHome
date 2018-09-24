@@ -1,5 +1,5 @@
 <mat-grid-list [cols]="cols" rowHeight="500">
-    <mat-grid-tile *ngFor="let card of cards">
+    <mat-grid-tile ##{{card.avatar}} *ngFor="let card of cards">
         <mat-card class="boxify">
             <mat-card-header>
                 <div mat-card-avatar>
@@ -17,7 +17,7 @@
                 </p>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-raised-button color="primary">ir</button>
+                <button mat-raised-button (click)="setController($event,card.avatar)" color="primary">ir</button>
                 <button mat-flat-button color="basic">Saber mas</button>
             </mat-card-actions>
         </mat-card>

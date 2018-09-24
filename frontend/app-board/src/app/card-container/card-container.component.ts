@@ -1,6 +1,6 @@
 import { Component, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Platform } from '@angular/cdk/platform';
+import {HttpClientModule, HttpClient} from '@angular/common/http'
 
 export interface cardContent {
   title: string;
@@ -49,7 +49,7 @@ export class CardContainerComponent implements OnDestroy {
     }
   ];
   
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private httpClient:HttpClientModule) {
     this.mobileQuery[0] = media.matchMedia('(max-width: 1200px)');
     this.mobileQuery[1] = media.matchMedia('(max-width:600px)');
 
@@ -72,9 +72,13 @@ export class CardContainerComponent implements OnDestroy {
     this.mobileQuery[1].addListener(this._mobileQueryListener);
     this.mobileQuery[0].addListener(this._mobileQueryListener);
   }
-  ngOnDestroy(){    
+  ngOnDestroy(){
     this.mobileQuery[1].removeListener(this._mobileQueryListener);
     this.mobileQuery[0].removeListener(this._mobileQueryListener);
+  }
+  setController($event,controller:string)
+  {
+    console.log(controller);
   }
 
 }
