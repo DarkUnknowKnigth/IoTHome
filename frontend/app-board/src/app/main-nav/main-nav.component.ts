@@ -1,5 +1,6 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',

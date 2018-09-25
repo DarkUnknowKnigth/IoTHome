@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatMenuModule,MatListModule,MatButtonModule, MatIconModule, MatCardModule,MatGridListModule, MatToolbarModule,MatSidenavModule} from '@angular/material';
+import { MatSelectModule,MatOptionModule,MatMenuModule,MatListModule,MatFormFieldModule,MatButtonModule,MatSlideToggleModule, MatIconModule, MatCardModule,MatGridListModule, MatToolbarModule,MatSidenavModule} from '@angular/material';
 import { CardContainerComponent } from './card-container/card-container.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { HttpClientModule} from '@angular/common/http'
@@ -26,7 +26,11 @@ import { HttpClientModule} from '@angular/common/http'
     MatMenuModule,
     MatListModule,
     MatIconModule,
-    HttpClientModule
+    MatSlideToggleModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule
 
   ],
   providers: [],

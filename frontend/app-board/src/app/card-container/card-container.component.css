@@ -1,3 +1,8 @@
 .boxify {
     max-width: 300px;
 }
+
+.cardify {
+    width: 250px !important;
+    height: 400px !important;
+}
